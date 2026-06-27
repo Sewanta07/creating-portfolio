@@ -1,0 +1,32 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 320) rotate(90) scale(360 300)">
+      <stop stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="200" y1="200" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="24" y="24" width="752" height="952" rx="36" stroke="url(#accent)" stroke-opacity="0.45" stroke-width="2"/>
+  <rect x="80" y="78" width="640" height="64" rx="32" fill="white" fill-opacity="0.04"/>
+  <circle cx="132" cy="110" r="12" fill="#38BDF8"/>
+  <circle cx="168" cy="110" r="12" fill="#22C55E"/>
+  <circle cx="204" cy="110" r="12" fill="#F59E0B"/>
+  <ellipse cx="400" cy="320" rx="260" ry="250" fill="url(#glow)"/>
+  <circle cx="400" cy="390" r="158" fill="#E2E8F0" fill-opacity="0.08"/>
+  <path d="M310 398C310 348.294 350.294 308 400 308V308C449.706 308 490 348.294 490 398V450C490 499.706 449.706 540 400 540V540C350.294 540 310 499.706 310 450V398Z" fill="#CBD5E1" fill-opacity="0.2"/>
+  <path d="M355 382C355 359.909 372.909 342 395 342H405C427.091 342 445 359.909 445 382V408C445 430.091 427.091 448 405 448H395C372.909 448 355 430.091 355 408V382Z" fill="#F8FAFC" fill-opacity="0.7"/>
+  <path d="M292 603C322.5 563 352.5 540 400 540C447.5 540 477.5 563 508 603C539.5 644 560 705 560 770H240C240 705 260.5 644 292 603Z" fill="#F8FAFC" fill-opacity="0.14"/>
+  <rect x="120" y="750" width="560" height="12" rx="6" fill="#38BDF8" fill-opacity="0.55"/>
+  <rect x="165" y="790" width="470" height="10" rx="5" fill="#E2E8F0" fill-opacity="0.22"/>
+  <rect x="205" y="828" width="390" height="10" rx="5" fill="#E2E8F0" fill-opacity="0.16"/>
+  <text x="120" y="910" fill="#E2E8F0" fill-opacity="0.9" font-family="Arial, sans-serif" font-size="44" font-weight="700">Sewanta Luitel</text>
+  <text x="120" y="954" fill="#94A3B8" font-family="Arial, sans-serif" font-size="22">Laravel Developer · Full Stack Web Developer</text>
+</svg>

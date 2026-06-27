@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="0.5" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <radialGradient id="aurora" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(840 180) rotate(90) scale(250 380)">
+      <stop stop-color="#38BDF8" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" rx="48" fill="url(#bg)"/>
+  <ellipse cx="860" cy="190" rx="280" ry="220" fill="url(#aurora)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="2"/>
+  <text x="96" y="200" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="64" font-weight="700">Sewanta Luitel</text>
+  <text x="96" y="270" fill="#60A5FA" font-family="Arial, sans-serif" font-size="34" font-weight="600">Laravel Developer | Full Stack Web Developer</text>
+  <text x="96" y="348" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="28">Premium portfolio website for a modern software developer.</text>
+  <text x="96" y="410" fill="#94A3B8" font-family="Arial, sans-serif" font-size="24">Itahari Sub-Metropolitan City, Sunsari, Koshi Province, Nepal</text>
+</svg>

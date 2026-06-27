@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --primary: 15 23 42; /* #0F172A */
+    --primary-foreground: 248 250 252;
+    --secondary: 30 41 59; /* #1E293B */
+    --secondary-foreground: 248 250 252;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 249 115 22; /* #F97316 */
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 249 115 22;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 10 15 28;
+    --foreground: 248 250 252;
+    --card: 15 23 42; /* #0F172A */
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 249 115 22; /* #F97316 */
+    --primary-foreground: 248 250 252;
+    --secondary: 30 41 59; /* #1E293B */
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 249 115 22; /* #F97316 */
+    --accent-foreground: 255 255 255;
+    --destructive: 127 29 29;
+    --destructive-foreground: 248 250 252;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 249 115 22;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
