@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <section className="py-24 relative" id="about">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,161 +24,167 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">
             About <span className="text-accent">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-8" />
+          <div className="w-20 h-1.5 bg-accent mx-auto rounded-full mb-8 shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+        {/* BENTO GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           
-          {/* Left: 3D Circular Portrait */}
+          {/* Bio Box - Span 2 */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/3 flex justify-center"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-2 lg:col-span-2 glass p-8 rounded-[2rem] border border-border/50 relative overflow-hidden group hover:border-accent/30 transition-colors"
           >
+            <div className="absolute top-0 right-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none group-hover:bg-accent/20 transition-colors duration-700" />
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Code2 className="text-accent" /> Software Developer
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Hello! I am <strong className="text-foreground">Sewanta Luitel</strong>, a passionate software developer based in Nepal. I hold a BSc (Hons) Computing degree and specialize in building robust web applications.
+              </p>
+              <p>
+                My expertise lies in Laravel and Full Stack Development, utilizing technologies like Python for backend services and PostgreSQL/MySQL for robust database architectures.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* 3D Profile Box - Span 1, Row Span 2 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 glass p-0 rounded-[2rem] border border-border/50 overflow-hidden relative min-h-[300px] flex items-center justify-center group hover:border-accent/50 transition-colors"
+            style={{ perspective: "1000px" }}
+          >
+            <Image 
+              src="/profile.jpg" 
+              alt="Sewanta Luitel" 
+              fill 
+              className="object-cover z-10 group-hover:scale-110 transition-transform duration-700" 
+            />
+
+            {/* Stunning 3D Full Stack Representation */}
             <motion.div 
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] border border-border/50 shadow-xl overflow-hidden flex items-center justify-center bg-secondary/20 transition-all duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}
+              className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-30 opacity-90 mix-blend-screen"
+              style={{ transformStyle: "preserve-3d" }}
+              animate={{ rotateY: [360, 0] }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             >
-              
-                {/* Image component using the provided profile photo */}
-                <Image 
-                  src="/profile.jpg" 
-                  alt="Sewanta Luitel" 
-                  fill 
-                  className="object-cover z-10 group-hover:scale-110 transition-transform duration-500" 
-                />
+              {/* Top Layer: Frontend (UI/Browser) */}
+              <motion.div 
+                className="absolute w-20 h-20 bg-accent/10 border border-accent/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(249,115,22,0.2)]"
+                style={{ transform: "rotateX(75deg) translateZ(35px)" }}
+              >
+                <Layout className="w-8 h-8 text-accent/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+              </motion.div>
 
-                {/* Stunning 3D Full Stack Representation (Rendered ON TOP to prevent mobile broken image block) */}
-                <motion.div 
-                  className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-30 opacity-90 mix-blend-screen"
-                  style={{ transformStyle: "preserve-3d" }}
-                  animate={{ rotateY: [360, 0] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                >
-                  {/* Top Layer: Frontend (UI/Browser) */}
-                  <motion.div 
-                    className="absolute w-24 h-24 bg-accent/10 border border-accent/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(249,115,22,0.2)]"
-                    style={{ transform: "rotateX(75deg) translateZ(40px)" }}
-                  >
-                    <Layout className="w-8 h-8 text-accent/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
-                  </motion.div>
+              {/* Middle Layer: Backend (API/Server) */}
+              <motion.div 
+                className="absolute w-20 h-20 bg-blue-500/10 border border-blue-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                style={{ transform: "rotateX(75deg) translateZ(0px)" }}
+              >
+                <Server className="w-8 h-8 text-blue-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+              </motion.div>
 
-                  {/* Middle Layer: Backend (API/Server) */}
-                  <motion.div 
-                    className="absolute w-24 h-24 bg-blue-500/10 border border-blue-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]"
-                    style={{ transform: "rotateX(75deg) translateZ(0px)" }}
-                  >
-                    <Server className="w-8 h-8 text-blue-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
-                  </motion.div>
+              {/* Bottom Layer: Database */}
+              <motion.div 
+                className="absolute w-20 h-20 bg-green-500/10 border border-green-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                style={{ transform: "rotateX(75deg) translateZ(-35px)" }}
+              >
+                <Database className="w-8 h-8 text-green-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+              </motion.div>
 
-                  {/* Bottom Layer: Database */}
-                  <motion.div 
-                    className="absolute w-24 h-24 bg-green-500/10 border border-green-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(34,197,94,0.2)]"
-                    style={{ transform: "rotateX(75deg) translateZ(-40px)" }}
-                  >
-                    <Database className="w-8 h-8 text-green-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
-                  </motion.div>
-
-                  {/* Glowing Connection Line */}
-                  <div className="absolute w-1 h-24 bg-gradient-to-b from-accent via-blue-500 to-green-500 blur-sm animate-pulse" />
-                </motion.div>
-
-
+              {/* Glowing Connection Line */}
+              <div className="absolute w-1 h-20 bg-gradient-to-b from-accent via-blue-500 to-green-500 blur-sm animate-pulse" />
             </motion.div>
           </motion.div>
 
-          {/* Right: Text and Stats */}
-          <div className="w-full lg:w-2/3 space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-              className="glass p-8 rounded-3xl border border-border/50 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
-              
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Code2 className="text-accent" /> Software Developer
-              </h3>
-              
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Hello! I am <strong className="text-foreground">Sewanta Luitel</strong>, a passionate software developer based in Nepal. I hold a BSc (Hons) Computing degree and specialize in building robust web applications.
-                </p>
-                <p>
-                  My expertise lies in Laravel and Full Stack Development, utilizing technologies like Python for backend services and PostgreSQL/MySQL for robust database architectures. I love creating scalable, practical solutions that solve real-world problems. Whether it&apos;s designing a responsive frontend or engineering a complex backend, I enjoy every step of the development process.
-                </p>
-                <p>
-                  I consider myself a continuous learner, always exploring new technologies and modern design patterns to stay ahead in the rapidly evolving tech landscape.
-                </p>
+          {/* Location Box - Span 1 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="md:col-span-3 lg:col-span-1 glass p-8 rounded-[2rem] border border-border/50 flex flex-col justify-center gap-4 group hover:border-accent/30 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                <MapPin className="w-5 h-5" />
               </div>
-
-              <div className="mt-8 pt-8 border-t border-border/50">
-                <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <BookOpen className="text-accent w-5 h-5" /> BSc Hons Computing (London Met University) Core Modules
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Globe className="w-4 h-4 text-accent" /> Web Technologies
-                  </div>
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Database className="w-4 h-4 text-accent" /> Database Systems
-                  </div>
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Code2 className="w-4 h-4 text-accent" /> Software Engineering
-                  </div>
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Server className="w-4 h-4 text-accent" /> Computer Systems & Networks
-                  </div>
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Shield className="w-4 h-4 text-accent" /> Cybersecurity
-                  </div>
-                  <div className="flex items-center gap-2 bg-secondary/20 p-2 rounded-lg border border-border/30">
-                    <Laptop className="w-4 h-4 text-accent" /> Final Year Project
-                  </div>
-                </div>
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">Based in</p>
+                <p className="font-bold">Itahari, Nepal</p>
               </div>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 text-sm font-medium bg-secondary/30 px-4 py-2 rounded-full border border-border/50">
-                  <MapPin className="w-4 h-4 text-accent" />
-                  Itahari, Nepal
-                </div>
-                <div className="flex items-center gap-2 text-sm font-medium bg-secondary/30 px-4 py-2 rounded-full border border-border/50">
-                  <BookOpen className="w-4 h-4 text-accent" />
-                  BSc (Hons) Computing
-                </div>
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass p-6 rounded-2xl border border-border/50 hover:bg-white/5 hover:border-accent/50 transition-all group"
-                >
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4 group-hover:scale-110 transition-transform">
-                    {stat.icon}
-                  </div>
-                  <h4 className="text-2xl md:text-4xl font-display font-bold text-foreground mb-1 md:mb-2 group-hover:text-accent transition-colors">
-                    {stat.value}
-                  </h4>
-                  <p className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </motion.div>
-              ))}
             </div>
-          </div>
+            <div className="w-full h-px bg-border/50 my-2" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">Degree</p>
+                <p className="font-bold text-sm">BSc Hons Computing</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Core Modules Box - Span 2 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="md:col-span-2 lg:col-span-2 glass p-8 rounded-[2rem] border border-border/50 group hover:border-accent/30 transition-colors flex flex-col justify-center"
+          >
+            <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <Laptop className="text-accent w-5 h-5" /> Core Modules
+            </h4>
+            <div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 bg-secondary/20 p-2.5 rounded-xl border border-border/30 group-hover:border-accent/20 transition-colors">
+                <Globe className="w-4 h-4 text-accent" /> Web Tech
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/20 p-2.5 rounded-xl border border-border/30 group-hover:border-accent/20 transition-colors">
+                <Database className="w-4 h-4 text-accent" /> Databases
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/20 p-2.5 rounded-xl border border-border/30 group-hover:border-accent/20 transition-colors">
+                <Code2 className="w-4 h-4 text-accent" /> Software Eng.
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/20 p-2.5 rounded-xl border border-border/30 group-hover:border-accent/20 transition-colors">
+                <Shield className="w-4 h-4 text-accent" /> Cybersec
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Stat Boxes */}
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+              className="md:col-span-1 lg:col-span-1 glass p-6 rounded-[2rem] border border-border/50 flex flex-col items-center justify-center text-center group hover:bg-white/5 hover:border-accent/50 transition-all"
+            >
+              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-4 group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.1)] group-hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+                {stat.icon}
+              </div>
+              <h4 className="text-3xl font-display font-extrabold text-foreground mb-1 group-hover:text-accent transition-colors">
+                {stat.value}
+              </h4>
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+
         </div>
       </div>
     </section>

@@ -37,6 +37,9 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange
         >
+          {/* Subtle Film Grain/Noise Overlay */}
+          <div className="fixed inset-0 bg-noise pointer-events-none z-[9999]" />
+
           <LoadingScreen>
             <CustomCursor />
             <Navbar />
