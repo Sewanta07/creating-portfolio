@@ -10,15 +10,15 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sewanta Luitel | Laravel & Full Stack Developer",
-  description: "Portfolio of Sewanta Luitel, a Laravel & Full Stack Web Developer from Nepal. BSc (Hons) Computing Graduate building scalable web applications.",
-  keywords: ["Sewanta Luitel", "Laravel Developer", "Full Stack Developer", "Software Engineer Nepal", "React", "Next.js"],
+  title: "Sewanta Luitel | FullStack Developer",
+  description: "Sewanta Luitel FullStack Developer",
+  keywords: ["Sewanta Luitel", "FullStack Developer", "Software Engineer Nepal", "React", "Next.js"],
   authors: [{ name: "Sewanta Luitel" }],
   openGraph: {
-    title: "Sewanta Luitel | Software Developer",
-    description: "Premium portfolio of Sewanta Luitel. Discover my projects and skills.",
+    title: "Sewanta Luitel | FullStack Developer",
+    description: "Sewanta Luitel FullStack Developer",
     url: "https://sewantaluitel.com.np",
-    siteName: "Sewanta Luitel Portfolio",
+    siteName: "Sewanta Luitel",
     type: "website",
   },
 };
