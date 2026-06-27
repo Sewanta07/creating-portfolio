@@ -43,7 +43,6 @@ export default function About() {
             <motion.div 
               className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] border border-border/50 shadow-xl overflow-hidden flex items-center justify-center bg-secondary/20 transition-all duration-500 hover:border-accent/50"
             >
-              <User className="w-24 h-24 text-muted-foreground/50 transition-all duration-500 hover:text-accent/80" />
               
               {/* Image component using the provided profile photo */}
               <Image 

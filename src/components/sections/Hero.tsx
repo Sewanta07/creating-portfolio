@@ -158,11 +158,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-64 h-64 md:w-80 md:h-80 group cursor-pointer"
             >
-              {/* Clean, professional border frame */}
               <div className="absolute inset-0 rounded-3xl border border-border/50 bg-secondary/20 shadow-xl overflow-hidden flex items-center justify-center z-10 transition-colors duration-500 hover:border-accent/50">
-                <div className="absolute inset-0 flex items-center justify-center bg-secondary/50">
-                  <User className="w-24 h-24 text-muted-foreground/50 transition-all duration-500 group-hover:text-accent/80" />
-                </div>
                 
                 {/* Image component using the provided profile photo */}
                 <Image

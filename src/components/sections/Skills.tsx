@@ -9,17 +9,17 @@ export default function Skills() {
     {
       title: "Backend",
       icon: <Server className="w-6 h-6" />,
-      skills: ["Laravel", "PHP", "Java", "ASP.NET"],
+      skills: ["Laravel", "Django", "Python", "Java", "C# / .NET"],
     },
     {
       title: "Frontend",
       icon: <Layout className="w-6 h-6" />,
-      skills: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript", "React"],
+      skills: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript", "React", "Next.js"],
     },
     {
       title: "Database",
       icon: <Database className="w-6 h-6" />,
-      skills: ["MySQL", "SQL Server"],
+      skills: ["MySQL", "PostgreSQL", "SQL Server"],
     },
     {
       title: "Tools",
