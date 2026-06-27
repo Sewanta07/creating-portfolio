@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { ArrowRight, Mail, User } from "lucide-react";
+import { ArrowRight, Mail, User, Server, Database, Layout } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -169,27 +169,39 @@ export default function Hero() {
                   priority
                 />
 
-                {/* Stunning 3D Geometric Core Placeholder (Rendered ON TOP to prevent mobile broken image block) */}
+                {/* Stunning 3D Full Stack Representation (Rendered ON TOP to prevent mobile broken image block) */}
                 <motion.div 
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 opacity-80 mix-blend-screen"
+                  className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-30 opacity-90 mix-blend-screen"
                   style={{ transformStyle: "preserve-3d" }}
-                  animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  animate={{ rotateY: [0, 360] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 >
-                  {/* Outer Rings */}
-                  <div className="absolute w-56 h-56 border border-accent/30 rounded-full" style={{ transform: "rotateX(75deg)" }} />
-                  <div className="absolute w-56 h-56 border border-accent/30 rounded-full" style={{ transform: "rotateY(75deg)" }} />
-                  
-                  {/* Inner Holographic Cube */}
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(48px)" }} />
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(-48px)" }} />
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(48px)" }} />
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(-48px)" }} />
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(48px)" }} />
-                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(-48px)" }} />
-                  
-                  {/* Glowing Core */}
-                  <div className="absolute w-12 h-12 bg-accent/50 rounded-full blur-xl animate-pulse" />
+                  {/* Top Layer: Frontend (UI/Browser) */}
+                  <motion.div 
+                    className="absolute w-32 h-32 bg-accent/10 border border-accent/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(249,115,22,0.2)]"
+                    style={{ transform: "rotateX(75deg) translateZ(50px)" }}
+                  >
+                    <Layout className="w-12 h-12 text-accent/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+                  </motion.div>
+
+                  {/* Middle Layer: Backend (API/Server) */}
+                  <motion.div 
+                    className="absolute w-32 h-32 bg-blue-500/10 border border-blue-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                    style={{ transform: "rotateX(75deg) translateZ(0px)" }}
+                  >
+                    <Server className="w-12 h-12 text-blue-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+                  </motion.div>
+
+                  {/* Bottom Layer: Database */}
+                  <motion.div 
+                    className="absolute w-32 h-32 bg-green-500/10 border border-green-500/40 rounded-xl flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                    style={{ transform: "rotateX(75deg) translateZ(-50px)" }}
+                  >
+                    <Database className="w-12 h-12 text-green-500/80 drop-shadow-lg" style={{ transform: "rotateX(-75deg)" }} />
+                  </motion.div>
+
+                  {/* Glowing Connection Line */}
+                  <div className="absolute w-1 h-32 bg-gradient-to-b from-accent via-blue-500 to-green-500 blur-sm animate-pulse" />
                 </motion.div>
 
 
