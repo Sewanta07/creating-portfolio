@@ -44,36 +44,37 @@ export default function About() {
               className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] border border-border/50 shadow-xl overflow-hidden flex items-center justify-center bg-secondary/20 transition-all duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}
             >
               
-              {/* Stunning 3D Geometric Core Placeholder */}
-              <motion.div 
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                style={{ transformStyle: "preserve-3d" }}
-                animate={{ rotateX: [360, 0], rotateY: [360, 0] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                {/* Outer Rings */}
-                <div className="absolute w-48 h-48 border border-accent/30 rounded-full" style={{ transform: "rotateX(75deg)" }} />
-                <div className="absolute w-48 h-48 border border-accent/30 rounded-full" style={{ transform: "rotateY(75deg)" }} />
-                
-                {/* Inner Holographic Cube */}
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(40px)" }} />
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(-40px)" }} />
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(40px)" }} />
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(-40px)" }} />
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(40px)" }} />
-                <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(-40px)" }} />
-                
-                {/* Glowing Core */}
-                <div className="absolute w-10 h-10 bg-accent/50 rounded-full blur-xl animate-pulse" />
-              </motion.div>
+                {/* Image component using the provided profile photo */}
+                <Image 
+                  src="/profile.jpg" 
+                  alt="Sewanta Luitel" 
+                  fill 
+                  className="object-cover z-10 group-hover:scale-110 transition-transform duration-500" 
+                />
 
-              {/* Image component using the provided profile photo */}
-              <Image 
-                src="/profile.jpg" 
-                alt="Sewanta Luitel" 
-                fill 
-                className="object-cover z-10 group-hover:scale-110 transition-transform duration-500" 
-              />
+                {/* Stunning 3D Geometric Core Placeholder (Rendered ON TOP to prevent mobile broken image block) */}
+                <motion.div 
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 opacity-80 mix-blend-screen"
+                  style={{ transformStyle: "preserve-3d" }}
+                  animate={{ rotateX: [360, 0], rotateY: [360, 0] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  {/* Outer Rings */}
+                  <div className="absolute w-48 h-48 border border-accent/30 rounded-full" style={{ transform: "rotateX(75deg)" }} />
+                  <div className="absolute w-48 h-48 border border-accent/30 rounded-full" style={{ transform: "rotateY(75deg)" }} />
+                  
+                  {/* Inner Holographic Cube */}
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(40px)" }} />
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(-40px)" }} />
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(40px)" }} />
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(-40px)" }} />
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(40px)" }} />
+                  <div className="w-20 h-20 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(-40px)" }} />
+                  
+                  {/* Glowing Core */}
+                  <div className="absolute w-10 h-10 bg-accent/50 rounded-full blur-xl animate-pulse" />
+                </motion.div>
+
 
             </motion.div>
           </motion.div>

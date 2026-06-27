@@ -160,9 +160,18 @@ export default function Hero() {
             >
               <div className="absolute inset-0 rounded-3xl border border-border/50 bg-secondary/20 shadow-xl overflow-hidden flex items-center justify-center z-10 transition-colors duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}>
                 
-                {/* Stunning 3D Geometric Core Placeholder */}
+                {/* Image component using the provided profile photo */}
+                <Image
+                  src="/profile.jpg"
+                  alt="Sewanta Luitel Portrait"
+                  fill
+                  className="object-cover z-10 group-hover:scale-105 transition-transform duration-700"
+                  priority
+                />
+
+                {/* Stunning 3D Geometric Core Placeholder (Rendered ON TOP to prevent mobile broken image block) */}
                 <motion.div 
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 opacity-80 mix-blend-screen"
                   style={{ transformStyle: "preserve-3d" }}
                   animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -183,14 +192,7 @@ export default function Hero() {
                   <div className="absolute w-12 h-12 bg-accent/50 rounded-full blur-xl animate-pulse" />
                 </motion.div>
 
-                {/* Image component using the provided profile photo */}
-                <Image
-                  src="/profile.jpg"
-                  alt="Sewanta Luitel Portrait"
-                  fill
-                  className="object-cover z-20 group-hover:scale-105 transition-transform duration-700"
-                  priority
-                />
+
               </div>
             </motion.div>
           </div>
