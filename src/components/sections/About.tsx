@@ -41,9 +41,24 @@ export default function About() {
             className="w-full lg:w-1/3 flex justify-center"
           >
             <motion.div 
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] border border-border/50 shadow-xl overflow-hidden flex items-center justify-center bg-secondary/20 transition-all duration-500 hover:border-accent/50"
+              className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] border border-border/50 shadow-xl overflow-hidden flex items-center justify-center bg-secondary/20 transition-all duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}
             >
               
+              {/* 3D Wireframe Cube Placeholder */}
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateX: [360, 0], rotateY: [360, 0] }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "translateZ(48px)" }} />
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "translateZ(-48px)" }} />
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(48px)" }} />
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(-48px)" }} />
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(48px)" }} />
+                <div className="w-24 h-24 border border-accent/40 rounded-lg absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(-48px)" }} />
+              </motion.div>
+
               {/* Image component using the provided profile photo */}
               <Image 
                 src="/profile.jpg" 

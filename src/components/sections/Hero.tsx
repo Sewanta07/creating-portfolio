@@ -158,8 +158,23 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-64 h-64 md:w-80 md:h-80 group cursor-pointer"
             >
-              <div className="absolute inset-0 rounded-3xl border border-border/50 bg-secondary/20 shadow-xl overflow-hidden flex items-center justify-center z-10 transition-colors duration-500 hover:border-accent/50">
+              <div className="absolute inset-0 rounded-3xl border border-border/50 bg-secondary/20 shadow-xl overflow-hidden flex items-center justify-center z-10 transition-colors duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}>
                 
+                {/* 3D Wireframe Cube Placeholder */}
+                <motion.div 
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50"
+                  style={{ transformStyle: "preserve-3d" }}
+                  animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "translateZ(64px)" }} />
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "translateZ(-64px)" }} />
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(64px)" }} />
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(-64px)" }} />
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(64px)" }} />
+                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(-64px)" }} />
+                </motion.div>
+
                 {/* Image component using the provided profile photo */}
                 <Image
                   src="/profile.jpg"
