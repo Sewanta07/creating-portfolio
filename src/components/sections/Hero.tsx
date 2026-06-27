@@ -21,8 +21,8 @@ export default function Hero() {
   const smoothY = useSpring(mouseY, springConfig);
 
   // Map mouse position to rotation values
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], [10, -10]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-10, 10]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [20, -20]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-20, 20]);
 
   useEffect(() => {
     setMounted(true);
@@ -160,19 +160,27 @@ export default function Hero() {
             >
               <div className="absolute inset-0 rounded-3xl border border-border/50 bg-secondary/20 shadow-xl overflow-hidden flex items-center justify-center z-10 transition-colors duration-500 hover:border-accent/50" style={{ perspective: "1000px" }}>
                 
-                {/* 3D Wireframe Cube Placeholder */}
+                {/* Stunning 3D Geometric Core Placeholder */}
                 <motion.div 
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50"
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
                   style={{ transformStyle: "preserve-3d" }}
                   animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "translateZ(64px)" }} />
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "translateZ(-64px)" }} />
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(64px)" }} />
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateY(90deg) translateZ(-64px)" }} />
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(64px)" }} />
-                  <div className="w-32 h-32 border-2 border-accent/40 rounded-xl absolute bg-accent/5" style={{ transform: "rotateX(90deg) translateZ(-64px)" }} />
+                  {/* Outer Rings */}
+                  <div className="absolute w-56 h-56 border border-accent/30 rounded-full" style={{ transform: "rotateX(75deg)" }} />
+                  <div className="absolute w-56 h-56 border border-accent/30 rounded-full" style={{ transform: "rotateY(75deg)" }} />
+                  
+                  {/* Inner Holographic Cube */}
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(48px)" }} />
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "translateZ(-48px)" }} />
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(48px)" }} />
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateY(90deg) translateZ(-48px)" }} />
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(48px)" }} />
+                  <div className="w-24 h-24 border border-accent/60 rounded-xl absolute bg-accent/5 backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]" style={{ transform: "rotateX(90deg) translateZ(-48px)" }} />
+                  
+                  {/* Glowing Core */}
+                  <div className="absolute w-12 h-12 bg-accent/50 rounded-full blur-xl animate-pulse" />
                 </motion.div>
 
                 {/* Image component using the provided profile photo */}
