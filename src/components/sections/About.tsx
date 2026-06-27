@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, BookOpen, MapPin, Laptop, Award, User, Server, Database, Shield, Globe } from "lucide-react";
+import { Code2, BookOpen, MapPin, Laptop, Award, User, Server, Database, Shield, Globe, Layout } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
