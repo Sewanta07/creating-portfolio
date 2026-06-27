@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Database, Layout, Code2, Search } from "lucide-react";
+import { ExternalLink, Database, Layout, Code2 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import Image from "next/image";
 
 export default function Projects() {
   const projects = [

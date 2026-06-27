@@ -42,19 +42,6 @@ export default function Hero() {
     mouseY.set(0);
   };
 
-  const techBadges = [
-    { name: "Laravel", color: "bg-red-500", angle: 0 },
-    { name: "PHP", color: "bg-indigo-500", angle: 36 },
-    { name: "Django", color: "bg-green-700", angle: 72 },
-    { name: "Python", color: "bg-blue-600", angle: 108 },
-    { name: "Java", color: "bg-orange-500", angle: 144 },
-    { name: "C#", color: "bg-purple-600", angle: 180 },
-    { name: "PostgreSQL", color: "bg-blue-400", angle: 216 },
-    { name: "MySQL", color: "bg-yellow-500", angle: 252 },
-    { name: "React", color: "bg-cyan-400", angle: 288 },
-    { name: "Next.js", color: "bg-black border border-white/20", angle: 324 },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden" id="hero">
       {/* Clean minimal background */}
@@ -81,7 +68,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-4"
             >
-              Hi, I'm <span className="text-accent">Sewanta.</span>
+              Hi, I&apos;m <span className="text-accent">Sewanta.</span>
             </motion.h1>
 
             <motion.div

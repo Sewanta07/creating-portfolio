@@ -64,7 +64,7 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-8" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. Drop me a message below!
+            Have a project in mind or want to discuss potential opportunities? I&apos;d love to hear from you. Drop me a message below!
           </p>
         </motion.div>
 
