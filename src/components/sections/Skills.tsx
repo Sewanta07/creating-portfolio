@@ -55,17 +55,22 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass p-6 rounded-3xl border border-border/50 hover:-translate-y-2 transition-all duration-300 group"
+              whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5, z: 20 }}
+              transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 300 }}
+              style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+              className="glass p-6 rounded-3xl border border-border/50 hover:shadow-2xl hover:shadow-accent/20 hover:border-accent/50 transition-all duration-300 group cursor-default"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center text-accent mb-6 border border-accent/20 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all">
+              <div 
+                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center text-accent mb-6 border border-accent/20 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-500"
+                style={{ transform: "translateZ(30px)" }}
+              >
                 {category.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4">{category.title}</h3>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-bold mb-4" style={{ transform: "translateZ(20px)" }}>{category.title}</h3>
+              <ul className="space-y-3" style={{ transform: "translateZ(10px)" }}>
                 {category.skills.map((skill, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-300" />
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors font-medium">
                       {skill}
                     </span>
